@@ -5,6 +5,7 @@ import IndexPage from '../pages/index'
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
