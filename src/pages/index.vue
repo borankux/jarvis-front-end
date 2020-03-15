@@ -1,26 +1,31 @@
 <template>
   <div class="page">
-    <pre>
-      {{data}}
-    </pre>
+    <div class="project-list">
+      <project v-for="project in projects" v-bind:key="project.id" :project="project"></project>
+    </div>
   </div>
 </template>
 
 <script>
     import {getProjects} from "../apis/project";
+    import Project from '../pages/atoms/project';
 
     export default {
+        components: {
+            'project':Project
+        },
         name: "index",
         data() {
             return {
-                data: {}
+                projects: []
             }
         },
         methods: {
             getProjects()
             {
+                let that = this;
                 getProjects().then(res => {
-                    console.log(res);
+                    that.projects = res.data;
                 })
             }
         },
