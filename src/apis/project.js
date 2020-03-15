@@ -5,6 +5,16 @@
 import request from '../libs/request'
 
 
+export  function createProject(data)
+{
+  return request({
+    url: '/project',
+    method: 'post',
+    data: data
+  });
+}
+
+
 export function getProjects() {
   return request({
     url:'/project',

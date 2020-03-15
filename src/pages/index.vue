@@ -1,5 +1,8 @@
 <template>
   <div class="page">
+    <div class="bar">
+      <router-link :to="{name:'create-project'}">Add</router-link>
+    </div>
     <div class="project-list">
       <project v-for="project in projects" v-bind:key="project.id" :project="project"></project>
     </div>
@@ -27,7 +30,7 @@
                 getProjects().then(res => {
                     that.projects = res.data;
                 })
-            }
+            },
         },
         mounted() {
             this.getProjects();
