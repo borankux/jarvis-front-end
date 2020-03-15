@@ -1,0 +1,6 @@
+version: 1.0
+commands:
+  - npm install
+  - npm run build
+scripts:
+  - bash ./test.sh
