@@ -30,7 +30,6 @@
                 let that = this;
                 let data = this.project;
                 createProject(data).then(res => {
-                    console.log(res);
                     if(res.code !== 20000) {
                         alert('failed !')
                     }
