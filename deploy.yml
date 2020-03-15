@@ -2,5 +2,6 @@ version: 1.0
 commands:
   - npm install
   - node build/build.js
+  - ls
 scripts:
   - bash ./test.sh
