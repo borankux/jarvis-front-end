@@ -26,15 +26,23 @@ export function getProjects() {
  * @param pid
  */
 export function getProject(pid) {
-
+  return request({
+    url:'/project/' + pid,
+    method:'get'
+  });
 }
 
 
 /**
  * @param pid
+ * @param data
  */
-export function updateProject(pid) {
-
+export function updateProject(pid, data) {
+  return request({
+    url:'/project/' + pid,
+    method:'put',
+    data: data
+  });
 }
 
 /**
@@ -42,5 +50,8 @@ export function updateProject(pid) {
  */
 
 export function deleteProject(pid) {
-
+  return request({
+    method:'delete',
+    url:'/project/' + pid,
+  });
 }

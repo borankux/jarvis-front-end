@@ -4,7 +4,7 @@
       <router-link :to="{name:'create-project'}">Add</router-link>
     </div>
     <div class="project-list">
-      <project v-for="project in projects" v-bind:key="project.id" :project="project"></project>
+      <project v-for="project in projects" v-bind:key="project.id" :project="project" @deleted="getProjects"></project>
     </div>
   </div>
 </template>
