@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="bar">
-      <router-link :to="{name:'create-project'}">Add</router-link>
+      <router-link class="button" :to="{name:'create-project'}">Add</router-link>
     </div>
     <div class="project-list">
       <project v-for="project in projects" v-bind:key="project.id" :project="project" @deleted="getProjects"></project>
@@ -41,5 +41,9 @@
 <style scoped>
   .index {
 
+  }
+
+  .bar {
+    padding: 10px;
   }
 </style>
