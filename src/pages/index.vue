@@ -6,6 +6,10 @@
     <div class="project-list">
       <project v-for="project in projects" v-bind:key="project.id" :project="project" @deleted="getProjects"></project>
     </div>
+    <div class="big-list-holder">
+      Big List
+    </div>
+    <div style="clear: both;"></div>
   </div>
 </template>
 
@@ -45,5 +49,21 @@
 
   .bar {
     padding: 10px;
+  }
+
+  .project-list {
+    width: 400px;
+    background-color: gray;
+    float: left;
+  }
+
+
+  .big-list-holder {
+    width: calc(100% - 500px);
+    background-color: teal;
+    min-height: 400px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
   }
 </style>
