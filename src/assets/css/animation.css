@@ -9,3 +9,16 @@
     background-color: rgba(0, 156, 0, 0.38);
   }
 }
+
+
+@keyframes buffer-loading-reverse {
+  from {
+    width: 100%;
+    background-color: rgba(0, 156, 0, 0.38);
+  }
+
+  to {
+    width: 0;
+    background-color: rgba(0, 178, 0, 0.15);
+  }
+}

@@ -1,7 +1,7 @@
 <template>
   <div class="task">
     <div class="check-box">
-      <div class="task-mask" :class="{'task-mask-animate': buffer}"></div>
+      <div class="task-mask" :class="{'task-mask-animate': buffer === 1, 'task-mask-animate-reverse': buffer === -1}"></div>
       <checkbox class="checkbox" :checked="isChecked" @onValueChanged="onCheckBoxChanged"></checkbox>
     </div>
     <div class="title" :class="{'title-done': task.status === 1}">
@@ -35,7 +35,7 @@
             return {
                 taskData: this.task,
                 taskIndex: this.index,
-                buffer: false,
+                buffer: 0,
             }
         },
         computed:{
@@ -47,12 +47,12 @@
             onCheckBoxChanged(value)
             {
                 let that = this;
-                that.buffer = !!value;
+                that.buffer = value ? 1 : -1;
                 setTimeout(function(){
-                    that.buffer = false;
+                    that.buffer = 0;
                     that.taskData.status = value ? 1 : 0;
                     that.$emit('updated', this.taskData, this.taskIndex);
-                }, 2000);
+                }, 1000);
             }
         }
     }
@@ -98,7 +98,12 @@
   }
 
   .task-mask-animate {
-    animation: buffer-loading 2s infinite;
+    animation: buffer-loading 1s infinite;
     animation-timing-function: ease-out;
+  }
+
+  .task-mask-animate-reverse {
+    animation: buffer-loading-reverse 1s infinite;
+    animation-timing-function: ease-in;
   }
 </style>
