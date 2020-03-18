@@ -45,7 +45,7 @@
   .list {
     text-align: left;
     width: 300px;
-    height: auto;
+    min-height: 100px;
     background-color: white;
     box-shadow: 0 0  6px 2px #aaa;
     border-radius: 5px;
@@ -66,5 +66,9 @@
     text-align: center;
     line-height: 25px;
     font-weight: bolder;
+  }
+
+  .task-list {
+    padding: 0 10px;
   }
 </style>

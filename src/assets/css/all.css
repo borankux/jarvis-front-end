@@ -11,3 +11,12 @@ body {
   padding: 5px;
   box-sizing: border-box;
 }
+
+.color-success {
+  color: green;
+}
+
+
+.color-default {
+  color: gray;
+}

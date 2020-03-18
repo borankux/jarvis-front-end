@@ -8,9 +8,7 @@
         <project v-for="project in projects" v-bind:key="project.id" :project="project" @deleted="getProjects"></project>
       </div>
       <div class="big-list-holder">
-        <div class="big-list-holder">
-          <list v-for="list in kanban" v-bind:key="list.id" :data="list"></list>
-        </div>
+          <list class="list" v-for="list in kanban" v-bind:key="list.id" :data="list"></list>
       </div>
       <div style="clear: both;"></div>
     </div>
@@ -38,7 +36,122 @@
                         tasks:[
                             {
                                 id:0,
-                                title:'Default task in list',
+                                title:'完成界面配色。基础颜色的设置，最好引用一个框架吧，自己写太费劲儿了。我也不知道怎么解决，就先这样吧',
+                                status:0
+                            },
+                            {
+                                id:1,
+                                title: '减脂操',
+                                status:1
+                            },
+                            {
+                                id:2,
+                                title:'一天不抽烟',
+                                status:0
+                            }
+                        ]
+                    },
+                    {
+                        id:1,
+                        title:"完成列表",
+                        tasks:[
+                            {
+                                id:0,
+                                title:'完成界面配色。基础颜色的设置，最好引用一个框架吧，自己写太费劲儿了。我也不知道怎么解决，就先这样吧',
+                                status:0
+                            },
+                            {
+                                id:1,
+                                title: '减脂操',
+                                status:1
+                            },
+                            {
+                                id:2,
+                                title:'一天不抽烟',
+                                status:0
+                            }
+                        ]
+                    },
+                    {
+                        id:2,
+                        title:"完成列表",
+                        tasks:[
+                            {
+                                id:0,
+                                title:'完成界面配色。基础颜色的设置，最好引用一个框架吧，自己写太费劲儿了。我也不知道怎么解决，就先这样吧',
+                                status:0
+                            },
+                            {
+                                id:1,
+                                title: '减脂操',
+                                status:1
+                            },
+                            {
+                                id:2,
+                                title:'一天不抽烟',
+                                status:0
+                            }
+                        ]
+                    },
+                    {
+                        id:3,
+                        title:"完成列表",
+                        tasks:[
+                            {
+                                id:0,
+                                title:'完成界面配色。基础颜色的设置，最好引用一个框架吧，自己写太费劲儿了。我也不知道怎么解决，就先这样吧',
+                                status:0
+                            },
+                            {
+                                id:1,
+                                title: '减脂操',
+                                status:1
+                            },
+                            {
+                                id:2,
+                                title:'一天不抽烟',
+                                status:0
+                            }
+                        ]
+                    },
+                    {
+                        id:4,
+                        title:"完成列表",
+                        tasks:[
+                            {
+                                id:0,
+                                title:'完成界面配色。基础颜色的设置，最好引用一个框架吧，自己写太费劲儿了。我也不知道怎么解决，就先这样吧',
+                                status:0
+                            },
+                            {
+                                id:1,
+                                title: '减脂操',
+                                status:1
+                            },
+                            {
+                                id:2,
+                                title:'一天不抽烟',
+                                status:0
+                            }
+                        ]
+                    },
+                    {
+                        id:5,
+                        title:"完成列表",
+                        tasks:[
+                            {
+                                id:0,
+                                title:'完成界面配色。基础颜色的设置，最好引用一个框架吧，自己写太费劲儿了。我也不知道怎么解决，就先这样吧',
+                                status:0
+                            },
+                            {
+                                id:1,
+                                title: '减脂操',
+                                status:1
+                            },
+                            {
+                                id:2,
+                                title:'一天不抽烟',
                                 status:0
                             }
                         ]
@@ -95,7 +208,13 @@
     padding: 10px;
     box-sizing: border-box;
     height: calc(100vh - 45px);
-    overflow: scroll;
-    display: flex;
+    overflow-x: auto;
+    display: inline-flex;
+    align-items: flex-start;
+    flex-flow: row;
+  }
+
+  .big-list-holder> .list {
+    margin: 0 10px;
   }
 </style>

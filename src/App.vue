@@ -5,8 +5,9 @@
 </template>
 
 <script>
-  import '@/assets/css/all.css';
-export default {
+    import '@/assets/iconfont/iconfont.css'
+    import '@/assets/css/all.css';
+  export default {
   name: 'App'
 }
 </script>
