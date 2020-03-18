@@ -176,7 +176,7 @@
 
 <style scoped>
   .index {
-    background-color: rgba(113, 113, 113, 0.87);
+    background-color: rgba(165, 165, 165, 0.87);
     width: 100%;
     height: 100vh;
   }
