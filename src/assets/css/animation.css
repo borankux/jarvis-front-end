@@ -1,0 +1,11 @@
+@keyframes buffer-loading {
+  from {
+    width: 0;
+    background-color: rgba(0, 178, 0, 0.15);
+  }
+
+  to {
+    width: 100%;
+    background-color: rgba(0, 156, 0, 0.38);
+  }
+}

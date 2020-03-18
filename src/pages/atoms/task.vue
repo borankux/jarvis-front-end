@@ -1,6 +1,7 @@
 <template>
   <div class="task">
     <div class="check-box">
+      <div class="task-mask" :class="{'task-mask-animate': buffer}"></div>
       <checkbox class="checkbox" :checked="isChecked" @onValueChanged="onCheckBoxChanged"></checkbox>
     </div>
     <div class="title" :class="{'title-done': task.status === 1}">
@@ -24,11 +25,17 @@
                     title: "untitled",
                     status:0
                 }
+            },
+            index: {
+                type: Number,
+                default:0
             }
         },
         data (){
             return {
-                taskData: this.task
+                taskData: this.task,
+                taskIndex: this.index,
+                buffer: false,
             }
         },
         computed:{
@@ -39,7 +46,13 @@
         methods: {
             onCheckBoxChanged(value)
             {
-                this.taskData.status = value ? 1 : 0;
+                let that = this;
+                that.buffer = !!value;
+                setTimeout(function(){
+                    that.buffer = false;
+                    that.taskData.status = value ? 1 : 0;
+                    that.$emit('updated', this.taskData, this.taskIndex);
+                }, 2000);
             }
         }
     }
@@ -47,7 +60,9 @@
 
 <style scoped>
   .task {
+    position: relative;
     padding: 5px 0;
+    margin: 2px 0;
   }
 
   .checkbox {
@@ -68,5 +83,22 @@
   .title-done {
     color: #929292;
     text-decoration: line-through;
+  }
+
+  .task:hover .title-done {
+    color: #444;
+    text-decoration: none;
+  }
+
+  .task-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+
+  .task-mask-animate {
+    animation: buffer-loading 2s infinite;
+    animation-timing-function: ease-out;
   }
 </style>

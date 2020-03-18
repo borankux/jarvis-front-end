@@ -2,7 +2,7 @@
     <div class="list">
       <div class="title">
         <div class="title-progress" style="width: 100%;">
-          <progress-bar :progress="20"></progress-bar>
+          <progress-bar :progress="listProgress"></progress-bar>
         </div>
 
         <div class="title-info">
@@ -12,7 +12,7 @@
 
       <div class="task-list">
         <ul style="list-style: none;padding: 0;margin: 0;">
-          <task v-for="task in data.tasks" v-bind:key="task.id" :task="task"></task>
+          <task v-for="(task,index) in data.tasks" v-bind:key="task.id" :task="task" :index="index" @updated="handleTaskClick"></task>
         </ul>
       </div>
     </div>
@@ -28,6 +28,11 @@
             'task': Task
         },
         name: "list",
+        data () {
+            return {
+                listData: this.data
+            }
+        },
         props: {
             data: {
                 type: Object,
@@ -36,6 +41,28 @@
                     title:'Untitled List',
                     tasks:[]
                 }
+            }
+        },
+        computed: {
+            listProgress() {
+                let tasks = this.listData.tasks;
+                if(tasks.length === 0) {
+                    return 0;
+                }
+
+                let progress = 0;
+                tasks.forEach( task => {
+                    if(task.status === 1) {
+                        progress ++;
+                    }
+                });
+                return Math.ceil(100 * (progress/tasks.length));
+            }
+        },
+        methods : {
+            handleTaskClick(newTask, index)
+            {
+
             }
         }
     }

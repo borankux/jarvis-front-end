@@ -5,8 +5,9 @@
 </template>
 
 <script>
-    import '@/assets/iconfont/iconfont.css'
+    import '@/assets/iconfont/iconfont.css';
     import '@/assets/css/all.css';
+    import '@/assets/css/animation.css';
   export default {
   name: 'App'
 }

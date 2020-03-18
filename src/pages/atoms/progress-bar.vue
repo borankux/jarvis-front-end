@@ -66,6 +66,8 @@
     top: 0;
     height: 10px;
     border-radius: 5px 0 0 5px ;
+    transition: width 0.5s;
+    transition-timing-function: ease-out;
   }
 
   .progress-value {
