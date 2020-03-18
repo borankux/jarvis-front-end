@@ -62,7 +62,7 @@
     position: absolute;
     width: 20%;
     background-color: #000000;
-    background-image: -webkit-linear-gradient(left, #7f8035, #10ff3d);
+    background-image: -webkit-linear-gradient(left, #c1d448, #10ff3d);
     left: 0;
     top: 0;
     height: 10px;
