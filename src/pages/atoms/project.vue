@@ -4,7 +4,7 @@
       <span class="title">{{project.title}}</span>
       <button class="btn-remove" @click="triggerDelete">x</button>
     </div>
-    <progress-bar :progress="getProgress"></progress-bar>
+    <progress-bar class="progress-bar" :progress="getProgress"></progress-bar>
     <div style="clear: both;"></div>
   </div>
 </template>
@@ -125,5 +125,9 @@
     display: block;
     float: left;
     font-size: 1em;
+  }
+
+  .progress-bar {
+    float: left;
   }
 </style>

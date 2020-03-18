@@ -2,8 +2,8 @@
     <div class="page">
       <h3>CreateProjectPage</h3>
       <div class="line">
-        <label for="name"> Project Name</label>
-        <input type="text" name="name" id="name" v-model="project.title">
+          <label for="name"> Project Name</label>
+          <input type="text" autofocus="autofocus" name="name" id="name" v-model="project.title">
       </div>
 
       <div>
@@ -38,6 +38,9 @@
                     });
                 });
             }
+        },
+        mounted() {
+
         }
     }
 </script>

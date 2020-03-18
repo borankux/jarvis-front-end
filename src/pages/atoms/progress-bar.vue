@@ -34,7 +34,6 @@
 <style scoped>
   .progress-bar {
     position: relative;
-    float: left;
     width: 80%;
     margin: 0 auto;
   }

@@ -12,6 +12,10 @@ export default {
 </script>
 
 <style>
+  body {
+
+  }
+
   #app {
     font-family: "Microsoft YaHei", sans-serif;
   }

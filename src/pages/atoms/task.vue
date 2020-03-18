@@ -7,7 +7,7 @@
       {{task.title}}
     </div>
   </div>
-s</template>
+</template>
 
 <script>
     export default {
